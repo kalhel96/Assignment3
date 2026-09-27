@@ -1,0 +1,10 @@
+Design Memo
+
+Stack for undo/redo:
+A stack is Last In, First Out (LIFO), like a pile of dinner plates. When you press undo, you want to cancel your newest action first. The newest action is always on top of the undo stack, so pop() gives the right one. The undone action goes on the redo stack, so redo can bring it back. When you do a new action, the redo stack is cleared, because the old actions no longer fit.
+
+Queue for the help desk:
+A queue is First In, First Out (FIFO), like a line at a store. The customer who arrives first should be helped first. This is fair. If we used a stack, the newest customer would be helped first, and the first customer might wait a very long time. enqueue() adds people to the back, and dequeue() helps the person at the front.
+
+Compared to Python lists:
+A Python list keeps items side by side in memory. My stack and queue use nodes, and each node points to the next one. My queue has front and rear pointers, so adding and removing are both fast. With a list, pop(0) is slow because every item has to shift over. My classes also only allow the correct actions, so the order stays safe.

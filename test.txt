@@ -1,0 +1,128 @@
+TEST OUTPUT
+(Menus are hidden to keep this short. Each 'Select an option' line is one interaction.)
+
+==================================================
+UNDO/REDO MANAGER (undo_redo.py)
+==================================================
+Edge cases tested: undo and redo on empty stacks, viewing an empty stack,
+a new action clearing the redo stack, an empty action, and an invalid option.
+
+Select an option: 2
+No actions to undo
+Select an option: 3
+No actions to redo
+Select an option: 5
+Redo Stack:
+Stack is empty
+Select an option: 1
+Describe the action (e.g., Insert 'a'): Insert 'a'
+Action performed: Insert 'a'
+Select an option: 1
+Describe the action (e.g., Insert 'a'): Insert 'b'
+Action performed: Insert 'b'
+Select an option: 1
+Describe the action (e.g., Insert 'a'): Delete 'b'
+Action performed: Delete 'b'
+Select an option: 4
+Undo Stack:
+- Delete 'b'
+- Insert 'b'
+- Insert 'a'
+Select an option: 2
+Undo: Delete 'b'
+Select an option: 2
+Undo: Insert 'b'
+Select an option: 5
+Redo Stack:
+- Insert 'b'
+- Delete 'b'
+Select an option: 3
+Redo: Insert 'b'
+Select an option: 1
+Describe the action (e.g., Insert 'a'): Insert 'c'
+Action performed: Insert 'c'
+Select an option: 5
+Redo Stack:
+Stack is empty
+Select an option: 4
+Undo Stack:
+- Insert 'c'
+- Insert 'b'
+- Insert 'a'
+Select an option: 1
+Describe the action (e.g., Insert 'a'): 
+Action cannot be empty.
+Select an option: 9
+Invalid option.
+Select an option: 6
+Exiting Undo/Redo Manager.
+
+==================================================
+HELP DESK TICKETING SYSTEM (help_desk_queue.py)
+==================================================
+Edge cases tested: helping, peeking, and viewing an empty queue,
+helping until the queue is empty again, an empty name, and an invalid option.
+
+Select an option: 2
+No customers to help.
+Select an option: 3
+No customers in the queue.
+Select an option: 4
+Waiting customers:
+Queue is empty
+Select an option: 1
+Enter customer name: Amina
+Amina added to the queue.
+Select an option: 1
+Enter customer name: Ben
+Ben added to the queue.
+Select an option: 1
+Enter customer name: Carlos
+Carlos added to the queue.
+Select an option: 3
+Next customer: Amina
+Select an option: 4
+Waiting customers:
+- Amina
+- Ben
+- Carlos
+Select an option: 2
+Amina has been helped.
+Select an option: 3
+Next customer: Ben
+Select an option: 2
+Ben has been helped.
+Select an option: 2
+Carlos has been helped.
+Select an option: 2
+No customers to help.
+Select an option: 4
+Waiting customers:
+Queue is empty
+Select an option: 1
+Enter customer name: 
+Name cannot be empty.
+Select an option: 7
+Invalid option.
+Select an option: 5
+Exiting Help Desk System.
+
+==================================================
+DIRECT CLASS CHECKS (Node, Stack, Queue)
+==================================================
+Node('A'): value = A, next = None
+Empty stack: peek() = None, pop() = None
+After push Page 1, Page 2, Page 3, print_stack():
+- Page 3
+- Page 2
+- Page 1
+pop() = Page 3
+peek() = Page 2
+Empty queue: front = None, rear = None, peek() = None, dequeue() = None
+After enqueue Person A, Person B, Person C, print_queue():
+- Person A
+- Person B
+- Person C
+dequeue() = Person A
+peek() = Person B
+After removing everyone: front = None, rear = None
